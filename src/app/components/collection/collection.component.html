@@ -1,0 +1,30 @@
+<div>
+    <app-icon-button (OnButtonClicked)="onAddCollectionClicked()" icon="faPlus" text="Start Collection">
+    </app-icon-button>
+</div>
+
+<div class="collection-item" *ngFor="let collection of collections;let index = index;" (click)="collectionSelected(collection)">
+    <div [ngClass]="{'single-collection':true , 'active': selected_index == index}">
+        <div class="single-collection-wrapper">
+            <div class="single-collection-wrapper-mnu">
+                <fa-icon class="single-collection-wrapper-mnu-btn" [icon]="faEllipsisV"></fa-icon>
+                <div class="single-collection-wrapper-mnu-dropdown">
+                    <ul>
+                        <li (click)="RemoveCollection(collection)">
+                            remove
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="single-collection-wrapper-name">
+                {{collection.name}}
+            </div>
+
+        </div>
+
+
+        <fa-icon *ngIf="selected_index == index" [icon]="faAngleRight"></fa-icon>
+
+    </div>
+</div>

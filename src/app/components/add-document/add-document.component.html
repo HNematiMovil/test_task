@@ -1,0 +1,50 @@
+<div (click)="Cancel()" [ngClass]="{'hide-mask' : ShowAddDocument !== true , 'add-document-mask':true}"></div>
+<div [ngClass]="{'hide-add-document' : ShowAddDocument !== true , 'add-document':true}">
+    <div class="add-document-header">
+        <h3 class="add-document-header-title">Add a document</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia nostrum repellendus molestias labore perferendis quasi laborum pariatur recusandae corporis commodi.</p>
+    </div>
+    <div class="add-document-body">
+        <h4>Parent path</h4>
+        <h5>{{collection.name}} / {{document.name}}</h5>
+
+        <mat-form-field ngDefaultControl [ngClass]="{'w-100p':true }">
+            <mat-label>Document id</mat-label>
+            <input [(ngModel)]="document.name" name="docid" matInput placeholder="">
+        </mat-form-field>
+        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, voluptate.</small>
+        <p *ngIf="document_name_error" class="alert-danger">{{error}}</p>
+        <div class="add-document-body-fields">
+
+            <!-- single field item -->
+            <div *ngFor="let item of fields;let index = index;" class="add-document-body-fields-item">
+                <div class="add-document-body-fields-item-wrapper">
+
+                    <app-single-field [(ngModel)]="fields[index]"></app-single-field>
+                    <div (click)="RemoveField(index)" class="add-document-body-fields-item-remove">
+                        <fa-icon [icon]="faTrashAlt"></fa-icon>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ./single field item -->
+
+
+
+            <div class="add-document-body-fields-add">
+                <button (click)="AddField()">
+                    <fa-icon [icon]="faPlusSquare"></fa-icon>
+                    add field</button>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="add-document-footer">
+        <button (click)="Save(true)">Save</button>
+        <button (click)="Save(false)">Save & add another</button>
+        <button (click)="Cancel()">cancel</button>
+    </div>
+
+</div>

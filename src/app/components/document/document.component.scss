@@ -1,0 +1,76 @@
+.document-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    .active {
+        background-color: rgba($color: #311b92, $alpha: .4);
+    }
+    .single-document {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        transition: all 0.2s ease;
+        &:hover {
+            background-color: rgba($color: #311b92, $alpha: 1);
+            color: #fff;
+        }
+        &-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            * {
+                margin: 0 0.5rem;
+            }
+            &-mnu {
+                position: relative;
+                &-dropdown {
+                    position: absolute;
+                    top: -1500px;
+                    left: -1rem;
+                    background-color: #fff;
+                    border-radius: 0.2rem;
+                    box-shadow: 3px 3px 8px 3px rgba($color: #000000, $alpha: .2);
+                    // width: 300px;
+                    transition: opacity 0.4s ease;
+                    min-height: 2rem;
+                    opacity: 0;
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                        li {
+                            color: #000;
+                            transition: color 0.2s ease;
+                            display: block;
+                            padding: 0.2rem 1rem;
+                            position: relative;
+                            &::before {
+                                content: '';
+                                width: 100%;
+                                background-color: red;
+                                height: 2px;
+                                position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                transform: translate(-50%, -50%) scaleX(0);
+                                transition: all 0.2s ease;
+                            }
+                            &:hover {
+                                color: blue;
+                                &::before {
+                                    transform: translate(-50%, -50%) scaleX(1);
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .single-document-wrapper-mnu-dropdown {
+                        top: 1rem;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

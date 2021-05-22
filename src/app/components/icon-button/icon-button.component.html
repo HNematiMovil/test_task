@@ -1,0 +1,5 @@
+<button (click)="OnClick()" [class]="extra_class">
+    <fa-icon *ngIf="icon=='faMinusCircle' " [icon]="faMinusCircle"></fa-icon>
+    <fa-icon *ngIf="icon=='faPlus' " [icon]="faPlus"></fa-icon>
+    {{ text | uppercase }}
+</button>

@@ -1,0 +1,11 @@
+.single-field {
+    &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-item {
+        flex-grow: 1;
+        padding: 0 1rem;
+    }
+}

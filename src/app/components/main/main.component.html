@@ -1,0 +1,43 @@
+<app-add-document [collection]="__collection" (CancelClicked)="AddDocumentCancelClicked()" (SaveClicked)="AddDocumentSaveClicked($event)" [ShowAddDocument]="ShowAddDocument"></app-add-document>
+<div class="breadcrumbs">
+    /
+    <fa-icon *ngIf="__collection.name !== '' " [icon]="faAngleRight"></fa-icon> {{__collection.name}}
+    <fa-icon *ngIf="__document.name !== '' " [icon]="faAngleRight"></fa-icon> {{__document.name}}
+</div>
+<div class="main-wrapper">
+    <div class="main-wrapper-item">
+        <h3 class="main-wrapper-item-header">
+            Root
+        </h3>
+        <div class="main-wrapper-item-content">
+            <app-collection [selected_index]="selected_collection_index" (OnRemoveCollection)="RemoveCollection($event)" (OnAddCollection)="AddCollection()" (OnCollectionSelected)="CollectionSelected($event)" [collections]="collections"></app-collection>
+
+        </div>
+    </div>
+    <div class="main-wrapper-item">
+        <h3 *ngIf="__collection.name!==''" class="main-wrapper-item-header">
+            {{__collection.name}}
+        </h3>
+        <h3 *ngIf="__collection.name==''" class="main-wrapper-item-header">
+            choose collection
+        </h3>
+        <div class="main-wrapper-item-content">
+            <app-document [selected_index]="selected_document_index" (OnRemoveDocumet)="RemoveDocument($event)" (OnAddDocumet)="AddDocument()" *ngIf="__collection.documents!==undefined" [documents]="__collection.documents" (OnDocumentClicked)="DoucmentSelected($event)"></app-document>
+            <app-document (OnAddDocumet)="AddDocument()" *ngIf="__collection.documents==undefined"></app-document>
+
+        </div>
+    </div>
+    <div class="main-wrapper-item">
+        <h3 *ngIf="__document.name!==''" class="main-wrapper-item-header">
+            {{__document.name}}
+        </h3>
+        <h3 *ngIf="__document.name==''" class="main-wrapper-item-header">
+            choose document
+        </h3>
+        <div class="main-wrapper-item-content">
+            <app-field (OnRemoveField)="RemoveField($event)" (OnAddField)="AddField()" (OnAddCollection)="AddCollection()" *ngIf="__document.fields !== undefined" [fields]="__document.fields"></app-field>
+            <app-field (OnAddField)="AddField()" (OnAddCollection)="AddCollection()" *ngIf="__document.fields == undefined"></app-field>
+
+        </div>
+    </div>
+</div>

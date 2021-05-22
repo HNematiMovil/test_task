@@ -1,0 +1,60 @@
+@for $i from 1 through 100 {
+    .v-s-#{$i} {
+        width: 5vw;
+        height: #{$i}px;
+    }
+    .mr-t-#{$i} {
+        // margin top
+        margin-top: #{$i}px;
+        &r {
+            margin-top: #{$i}rem;
+        }
+    }
+    .mr-b-#{$i} {
+        // margin botton
+        margin-bottom: #{$i}px;
+    }
+    .mr-l-#{$i} {
+        // margin left
+        margin-left: #{$i}px;
+    }
+    .mr-r-#{$i} {
+        // margin right
+        margin-right: #{$i}px;
+    }
+    .mr-a-#{$i} {
+        // margin all
+        margin: #{$i}px;
+        &r {
+            margin: #{$i}rem;
+        }
+    }
+    .mh-#{$i} {
+        min-height: #{$i}vh;
+    }
+    // $my_width: percentage(#{$i});
+    .w-#{$i}p {
+        width: #{$i * 1%};
+    }
+    .pd-r-#{$i}r {
+        padding-right: #{$i}rem;
+    }
+    .pd-l-#{$i}r {
+        padding-left: #{$i}rem;
+    }
+    .pd-t-#{$i}r {
+        padding-top: #{$i}rem;
+    }
+    .pd-b-#{$i}r {
+        padding-bottom: #{$i}rem;
+    }
+    .pd-a-#{$i}r {
+        padding: #{$i}rem;
+    }
+    .lh-1-#{$i}r {
+        line-height: #{1+ $i/10}rem;
+    }
+    .fs-1-#{$i}r {
+        font-size: #{1+ $i/10}rem;
+    }
+}

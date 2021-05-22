@@ -1,0 +1,35 @@
+<div class="single-field-container">
+    <div class="single-field-item">
+
+        <mat-form-field class="w-100p">
+            <mat-label>Field Name</mat-label>
+            <input type="text" matInput placeholder="" [(ngModel)]="field.fieldName">
+        </mat-form-field>
+
+    </div>
+
+    <div class="single-field-item">
+
+
+        <mat-form-field class="w-100p" appearance="fill">
+            <mat-label>Field Type</mat-label>
+            <select matNativeControl required [(ngModel)]="field.fieldType">
+            <option value="String">String</option>
+            <option value="Integer">Integer</option>
+            <option value="Float">Float</option>
+            <option value="Boolean">Boolean</option>
+            
+          </select>
+        </mat-form-field>
+
+    </div>
+
+    <div class="single-field-item">
+
+        <mat-form-field class="w-100p">
+            <mat-label>Field Value</mat-label>
+            <input type="text" matInput placeholder="" [(ngModel)]="field.fieldValue">
+        </mat-form-field>
+
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div>
+    <app-icon-button (OnButtonClicked)="onAddCollectionClicked()" extra_class="border-bottom-i btn-icon " icon="faPlus" text="Start Collection"></app-icon-button>
+    <app-icon-button (OnButtonClicked)="onAddFieldClicked()" icon="faPlus" text="Add Field"></app-icon-button>
+</div>
+
+<div class="field-item" *ngFor="let field of fields;let index = index">
+    <div class="field-item-wrapper">
+        <div class="field-item-wrapper-name">
+            {{field.fieldName}}
+        </div>
+        <div class="field-item-wrapper-value">
+            {{ field.fieldValue}}
+        </div>
+
+    </div>
+
+
+    <div (click)="RemoveField(field)" class="field-item-remove">
+        <fa-icon [icon]="faTrashAlt"></fa-icon>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Add a collection</h1>
+<div mat-dialog-content>
+    <mat-form-field class="w-100p">
+        <mat-label>Collection Name</mat-label>
+        <input required matInput placeholder="" [(ngModel)]="new_name">
+
+    </mat-form-field>
+</div>
+<p class="alert-danger" *ngIf="hasError">{{error}}</p>
+<div mat-dialog-actions>
+    <button class="btn" (click)="closeDialog()">Cancel</button>
+    <button class="btn" (click)="Save();" cdkFocusInitial>Add Collection</button>
+</div>

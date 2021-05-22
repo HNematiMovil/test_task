@@ -1,0 +1,32 @@
+<div>
+    <app-icon-button (OnButtonClicked)="onAddDocumentClicked()" icon="faPlus" text="Add document"></app-icon-button>
+</div>
+
+
+<div class="document-item" *ngFor="let document of documents; let index = index" (click)="documentSelected(document)">
+
+    <div [ngClass]="{'single-document':true , 'active': selected_index == index}">
+        <div class="single-document-wrapper">
+            <div class="single-document-wrapper-mnu">
+                <fa-icon class="single-document-wrapper-mnu-btn" [icon]="faEllipsisV"></fa-icon>
+                <div class="single-document-wrapper-mnu-dropdown">
+                    <ul>
+                        <li (click)="RemoveDocument(document)">
+                            remove
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="single-document-wrapper-name">
+                {{document.name}}
+            </div>
+
+        </div>
+
+
+        <fa-icon *ngIf="selected_index == index" [icon]="faAngleRight"></fa-icon>
+
+    </div>
+
+</div>

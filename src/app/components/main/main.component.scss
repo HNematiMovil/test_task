@@ -1,0 +1,24 @@
+.main-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &-item {
+        min-height: 100vh;
+        flex-grow: 1;
+        border-right: 1px solid rgba($color: #000000, $alpha: 0.2);
+        position: relative;
+        &-header {
+            margin: 0;
+            padding: 0.5rem;
+            border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+            border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
+        }
+        &-content {
+            // padding: 0.5rem;
+        }
+    }
+}
+
+.breadcrumbs {
+    padding: 1rem;
+}

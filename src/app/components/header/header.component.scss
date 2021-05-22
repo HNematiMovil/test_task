@@ -1,0 +1,10 @@
+$nav_bg_color :rgb(0, 102, 255);
+$nav_fore_color :#fff;
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $nav_bg_color;
+    color: $nav_fore_color;
+    padding: 0.5rem;
+}

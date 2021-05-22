@@ -1,0 +1,33 @@
+.field-item {
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+        background-color: #000051;
+        color: #fff;
+        .field-item-remove {
+            opacity: 1;
+        }
+    }
+    &-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        &-name {}
+        &-value {
+            &::before {
+                content: ":";
+            }
+        }
+    }
+    &-remove {
+        transition: all 0.2s ease;
+        opacity: 0;
+        &:hover {
+            color: #8e0000;
+        }
+    }
+}

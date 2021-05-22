@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Add a field</h1>
+<div mat-dialog-content>
+    <app-single-field [(ngModel)]="field"></app-single-field>
+</div>
+<p class="alert-danger" *ngIf="has_error">{{error}}</p>
+<div mat-dialog-actions>
+    <button class="btn" (click)="closeDialog()">Cancel</button>
+    <button class="btn" (click)="Save();" cdkFocusInitial>Save Field</button>
+</div>
